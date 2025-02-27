@@ -1,5 +1,7 @@
 # Import Modules ==============>
 from get_and_set.set_question import section1
+from get_and_set.get_results import section2
+
 from data.colors import cyan, clear
 
 
@@ -20,7 +22,7 @@ while True:
         except StopIteration:
             pass
     elif section == "2":
-        pass
+        section2()
     elif section == "0":
         break
     else:

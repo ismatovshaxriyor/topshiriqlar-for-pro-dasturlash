@@ -1,7 +1,7 @@
 # Import Modules ==============>
 from get_and_set.get_questions import get_question, get_answer
 from data.colors import blue, red, yellow, green, clear
-from get_and_set.get_results import get_result
+from get_and_set.set_results import set_result
 
 
 # First section func. ============>
@@ -28,14 +28,14 @@ def section1():
             print(red + "Noto'g'ri javob")
             print(blue + f"Ishtirokchi: {name}")
             print(yellow + f"Natija: {count}/10\n" + clear)
-            get_result(name, count)
+            set_result(name, count)
         
         def full_result():
             if count == 10:
                 print(green + "\nENG YUQORI NATIJA")
                 print(blue + f"Ishtirokchi: {name}")
                 print(yellow + f"Natija: {count}/10\n" + clear)
-                get_result(name, count)
+                set_result(name, count)
 
         if input_ans == "a":
             if b[0]["isTrue"] != True:
