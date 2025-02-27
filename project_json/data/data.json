@@ -1,0 +1,32 @@
+[
+    {
+        "name": "shaxa",
+        "played": 0,
+        "best_score": 1
+    },
+    {
+        "name": "o",
+        "played": 0,
+        "best_score": 2
+    },
+    {
+        "name": "x",
+        "played": 0,
+        "best_score": 6
+    },
+    {
+        "name": "admin",
+        "played": 0,
+        "best_score": 7
+    },
+    {
+        "name": "f",
+        "played": 0,
+        "best_score": 10
+    },
+    {
+        "name": "d",
+        "played": 0,
+        "best_score": 10
+    }
+]

@@ -22,5 +22,3 @@ def get_result(name, result):
 
     with open(file_path, 'w') as f:
         json.dump(data, f, indent=4)
-    
-    print("new result added")

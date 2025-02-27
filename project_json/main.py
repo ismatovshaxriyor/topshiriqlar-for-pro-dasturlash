@@ -15,7 +15,10 @@ while True:
 
     section = input("        -> ")
     if section == "1":
-        section1()
+        try:
+            section1()
+        except StopIteration:
+            pass
     elif section == "2":
         pass
     elif section == "0":
