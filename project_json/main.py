@@ -1,7 +1,6 @@
 # Import Modules ==============>
 from get_and_set.set_question import section1
 from get_and_set.get_results import section2
-
 from data.colors import cyan, clear
 
 
