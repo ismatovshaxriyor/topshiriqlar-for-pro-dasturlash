@@ -1,0 +1,15 @@
+----------- 1.1 -----------
+-- SELECT * FROM city WHERE country = "Uzbekistan";
+
+----------- 2.1 -----------
+-- SELECT * FROM books ORDER BY id;
+-- SELECT * FROM books WHERE author = "Peter Thiel"
+
+----------- 3.1 -----------
+-- SELECT * FROM user WHERE age = 25;
+
+----------- 3.2 -----------
+-- SELECT first_name, age FROM user WHERE age = 25;
+
+----------- 3.3 -----------
+-- SELECT first_name, last_name FROM user WHERE id = 3;
