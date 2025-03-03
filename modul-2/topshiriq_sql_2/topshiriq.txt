@@ -1,0 +1,88 @@
+--------------- AVG 1 ---------------  
+-- SELECT avg(price) FROM books;
+
+--------------- AVG 2 ---------------
+-- SELECT avg(price) FROM books WHERE author = "Peter Thiel"
+
+--------------- AVG 3 ---------------
+-- SELECT avg(price) FROM books WHERE category = "Programming"
+
+--------------- AVG 4 ---------------
+-- SELECT avg(price) FROM books WHERE author = "Eric Ries" AND category = "Business";
+
+--------------- AVG 5 ---------------
+-- SELECT avg(postcode) FROM city;
+
+--------------- AVG 6 ---------------
+-- SELECT avg(postcode) FROM city WHERE country = "Uzbekistan";
+
+-- ======================================================================================
+
+--------------- SUM 1 ---------------
+-- SELECT sum(price) FROM books;
+
+--------------- SUM 2 ---------------
+-- SELECT sum(price) FROM books WHERE author = "Peter Thiel";
+
+--------------- SUM 3 ---------------
+-- SELECT sum(price) FROM books WHERE category = "Programming";
+
+--------------- SUM 4 ---------------
+-- SELECT sum(price) FROM books WHERE author = "Eric Ries" AND category = "Business";
+
+-- ======================================================================================
+
+--------------- LIMIT 1 ---------------
+-- SELECT * FROM city WHERE country = "Uzbekistan" LIMIT 1;
+
+--------------- LIMIT 2 ---------------
+-- SELECT * FROM city WHERE id > 4 LIMIT 2 OFFSET 1;
+
+--------------- LIMIT 3 ---------------
+-- SELECT * FROM city WHERE postcode < 12345 LIMIT 1;
+
+--------------- LIMIT 4 ---------------
+-- SELECT * FROM city WHERE country = "Uzbekistan" LIMIT 1 OFFSET 2;
+
+-- ======================================================================================
+
+--------------- LIMIT 5 ---------------
+-- SELECT * FROM books WHERE category = "Programming" LIMIT 4 OFFSET 3;
+
+--------------- LIMIT 6 ---------------
+-- SELECT * FROM books WHERE author = "Peter Thiel" LIMIT 6;
+
+--------------- LIMIT 7 ---------------
+-- SELECT * FROM books ORDER BY price LIMIT 5;
+
+--------------- LIMIT 8 ---------------
+-- SELECT * FROM books ORDER BY price DESC LIMIT 3;
+
+--------------- LIMIT 9 ---------------
+-- SELECT * FROM books ORDER BY price DESC LIMIT 7 OFFSET 3;
+
+-- ======================================================================================
+
+--------------- JOBS 1 ---------------
+-- SELECT min(min_salary) FROM jobs;
+
+--------------- JOBS 2 ---------------
+-- SELECT max(min_salary) FROM jobs;
+
+--------------- JOBS 3 ---------------
+-- SELECT min(max_salary) FROM jobs;
+
+--------------- JOBS 4 ---------------
+-- SELECT max(max_salary) FROM jobs;
+
+--------------- JOBS 5 ---------------
+-- SELECT job_title, min_salary, max_salary FROM jobs ORDER BY ((max_salary + min_salary) / 2) DESC LIMIT 5;
+
+-- ======================================================================================
+
+--------------- COUNTRIES 1 ---------------
+-- SELECT * FROM countries WHERE region_id = 4 ORDER BY country_name;
+
+--------------- COUNTRIES 2 ---------------
+-- SELECT * FROM countries ORDER BY region_id, country_name;
+
