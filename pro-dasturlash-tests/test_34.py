@@ -4,7 +4,20 @@ from telegram import ReplyKeyboardMarkup, KeyboardButton
 ADMIN_ID = 2048383791
 
 def show_menu(update, contetx):
-    buttons = []
+    buttons = [
+        [
+            KeyboardButton(text="send contact", request_contact=True),
+            KeyboardButton(text="send location", request_location=True)
+        ],
+        [
+            KeyboardButton(text="Menu 3"),
+            KeyboardButton(text="Menu 4")
+        ]
+    ]
+    update.message.reply_text(
+        text="Menu",
+        reply_markup=ReplyKeyboardMarkup(buttons, resize_keyboard=True, one_time_keyboard=True)
+    )
 
 def start_cmd(update, context):
     print(update.message.from_user)
@@ -16,6 +29,7 @@ def main():
     updater = Updater(token=TOKEN, request_kwargs={'connect_timeout': 30, 'read_timeout': 30})
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler("start", start_cmd))
+    dispatcher.add_handler(CommandHandler("menu", show_menu))
 
     updater.start_polling()
     updater.idle()
