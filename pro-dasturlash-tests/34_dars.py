@@ -1,7 +1,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from telegram import ReplyKeyboardMarkup, KeyboardButton
 
-ADMIM_ID = 392330197
+ADMIM_ID = 2048383791
 
 
 def start_command(update, context):
@@ -39,7 +39,7 @@ def location_handler(update, context):
 
 
 def main():
-    updater = Updater(token="6255255483:AAEGa_tglVQJK74IcUEGCOsfZkEoVzz74dI")
+    updater = Updater(token="8062600526:AAEis5onPOo9CV15H-2abjXGH1GDC_fYF44")
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler('start', start_command))
