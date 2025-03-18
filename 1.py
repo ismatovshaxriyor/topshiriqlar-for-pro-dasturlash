@@ -20,12 +20,12 @@ def button_handler(update, context):
 
     if text == "youtubedan video yuklash":
         update.message.reply_text("video linkini yuboring...")
-        return youtube_handler
+        return youtube_handler()
     else:
         update.message.reply_text(text="noto'g'ri buyruq kiritildi!")
 
 def main():
-    updater = Updater("8062600526:AAEis5onPOo9CV15H-2abjXGH1GDC_fYF44")
+    updater = Updater("8062600526:AAEis5onPOo9CV15H-2abjXGH1GDC_fYF44", use_context=True)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("start", start))
