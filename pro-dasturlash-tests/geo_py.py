@@ -5,4 +5,4 @@ def get_location(latitude, longitude):
     location = geolocator.reverse(f"{latitude}, {longitude}")
     return location.address
 
-print(get_location(41.32188, 69.22083))
+print(get_location(41.321821, 69.220522))
