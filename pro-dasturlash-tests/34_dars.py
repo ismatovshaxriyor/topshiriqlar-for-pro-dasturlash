@@ -3,7 +3,6 @@ from telegram import ReplyKeyboardMarkup, KeyboardButton
 
 ADMIM_ID = 2048383791
 
-
 def start_command(update, context):
     print(update.message.from_user.id)
     update.message.reply_text(text="Siz /start kamandasini kiritdingiz!")
