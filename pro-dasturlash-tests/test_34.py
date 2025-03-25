@@ -27,15 +27,6 @@ def start_cmd(update, context):
 def message_handler(update, context):
     update.message.reply_text(text=f"sizni tushunmadim {update.message.from_user.first_name}")
 
-def contact_handler(update, context):
-    update.message.reply_text("Kontakt qo'shildi")
-    context.bot.send_message(chat_id=ADMIN_ID, text=f"yangi contact: +{update.message.contact.phone_number}")
-
-def loaction_handler(update, context):
-    location = update.message.location
-    update.message.reply_location(latitude=location.latitude, longitude=location.longitude)
-    context.bot.send_message(chat_id=ADMIN_ID, text=f"Latitude: {location.latitude}, Longitude: {location.longitude}")
-
 def main():
     TOKEN = "8062600526:AAEis5onPOo9CV15H-2abjXGH1GDC_fYF44"
     updater = Updater(token=TOKEN, request_kwargs={'connect_timeout': 30, 'read_timeout': 30})
@@ -43,8 +34,7 @@ def main():
     dispatcher.add_handler(CommandHandler("start", start_cmd))
     dispatcher.add_handler(CommandHandler("menu", show_menu))
     dispatcher.add_handler(MessageHandler(Filters.text, message_handler))
-    dispatcher.add_handler(MessageHandler(Filters.contact, contact_handler))
-    dispatcher.add_handler(MessageHandler(Filters.location, loaction_handler))
+    # dispatcher.add_handler(MessageHandler("menu", show_menu))
 
     updater.start_polling()
     updater.idle()
