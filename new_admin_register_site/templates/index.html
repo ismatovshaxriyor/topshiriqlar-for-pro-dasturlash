@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize%}
 {% block content %}
 <div class="page-container">
     {%include 'userbar.html'%}
@@ -26,7 +27,7 @@
                                         <i class="fa fa-book"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>{{ counts.faculties }}</h2>
+                                        <h2>{{ counts.faculties|intcomma}}</h2>
                                         <span>Faculty</span>
                                     </div>
                                 </div>
@@ -54,7 +55,7 @@
                                         <i class="fa fa-bank"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>{{ counts.kafedras }}</h2>
+                                        <h2>{{ counts.kafedras|intcomma }}</h2>
                                         <span>Kafedra</span>
                                     </div>
                                 </div>
@@ -82,7 +83,7 @@
                                         <i class="zmdi zmdi-calendar-note"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>{{ counts.subjects }}</h2>
+                                        <h2>{{ counts.subjects|intcomma }}</h2>
                                         <span>Subject</span>
                                     </div>
                                 </div>
@@ -112,7 +113,7 @@
                                         <i class="zmdi zmdi-account-o"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>{{ counts.teachers }}</h2>
+                                        <h2>{{ counts.teachers|intcomma }}</h2>
                                         <span>Teachers</span>
                                     </div>
                                 </div>
@@ -140,7 +141,7 @@
                                         <i class="zmdi zmdi-shopping-cart"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>{{ counts.groups }}</h2>
+                                        <h2>{{ counts.groups|intcomma }}</h2>
                                         <span>Groups</span>
                                     </div>
                                 </div>
@@ -168,7 +169,7 @@
                                         <i class="zmdi zmdi-calendar-note"></i>
                                     </div>
                                     <div class="text">
-                                        <h2>{{ counts.students }}</h2>
+                                        <h2>{{ counts.students|intcomma }}</h2>
                                         <span>Students</span>
                                     </div>
                                 </div>
@@ -229,11 +230,11 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ["Sun", "Mon", "Tu", "Wed", "Th", "Fri", "Sat"],
+          labels: ["Faculty", "Kafedra", "Teacher", "Group", "Student"],
           datasets: [
             {
-              label: "My First dataset",
-              data: [40, 55, 75, 81, 56, 55, 40],
+              label: "University dataset",
+              data: [{{ counts.faculties }}, {{ counts.kafedras }}, {{ counts.teachers }}, {{ counts.groups }}, {{ counts.students }}],
               borderColor: "rgba(0, 123, 255, 0.9)",
               borderWidth: "0",
               backgroundColor: "rgba(0, 123, 255, 0.5)"
@@ -280,7 +281,7 @@
         type: 'pie',
         data: {
           datasets: [{
-            data: [45, 25, 20, 10],
+              data: [{{ counts.faculties }}, {{ counts.kafedras }}, {{ counts.teachers }}, {{ counts.groups }}, {{ counts.students }}],
             backgroundColor: [
               "rgba(0, 123, 255,0.9)",
               "rgba(0, 123, 255,0.7)",
@@ -295,11 +296,8 @@
             ]
 
           }],
-          labels: [
-            "Green",
-            "Green",
-            "Green"
-          ]
+          labels: ["Faculty", "Kafedra", "Teacher", "Group", "Student"],
+
         },
         options: {
           legend: {
